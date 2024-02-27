@@ -1,3 +1,8 @@
+# CLIP dataset
+
+data/clip_data/*
+data/pdf/extracted_images/figures/long_pdf/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
