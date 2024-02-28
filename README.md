@@ -1,13 +1,14 @@
-# Multimodal Analysis on table and images 
+# Multimodal Analysis on table and images
 A multimodal analysis on table and images (charts, histograms, ...) with GPT4 and GPT4-Vision
 
 # How to use
 
-``` bash 
+``` bash
 python3.11 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp env_template env # Fill the env variables 
+ipython kernel install --user --name=venv # Choose this kernel when running the tutorials
+cp env_template env # Fill the env variables
 ```
 
 You will need to install poppler with brew. See this [link](https://pypi.org/project/unstructured/) for more information.

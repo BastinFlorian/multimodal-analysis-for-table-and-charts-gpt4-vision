@@ -17,7 +17,7 @@ def pretty_print_element(element: Element):
         print(f"HTML table: {element.metadata.text_as_html}")
 
 
-def html_table_df(html_table: str) -> str:
+def html_table_df(html_table: str) -> pd.DataFrame:
     return pd.read_html(StringIO(html_table), encoding='utf-8')[0]
 
 
@@ -35,7 +35,7 @@ def html_table_to_pipe_table(html_table: str) -> str:
     return df_to_table_str(df)
 
 
-def ask_question(llm, prompt_text, extracted_table: str, question: str) -> str:
+def ask_question(llm, prompt_text: str, extracted_table: str, question: str) -> str:
     prompt = ChatPromptTemplate.from_template(prompt_text)
 
     # Summary chain
@@ -58,8 +58,8 @@ def ask_question(llm, prompt_text, extracted_table: str, question: str) -> str:
     return answer
 
 
-def cosine_similarity(a, b):
-    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+def cosine_similarity(v1, v2) -> float:
+    return np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
 
 
 def encode_image(image_path: str) -> str:
@@ -68,8 +68,7 @@ def encode_image(image_path: str) -> str:
         return base64.b64encode(image_file.read()).decode("utf-8")
 
 
-def get_pdf_elements(pdf_path, detected_image_directory):
-    # Extract the PDF elements and detect the images
+def get_pdf_elements(pdf_path: str, detected_image_directory: str):
     elements = partition_pdf(
         filename=pdf_path,
         infer_table_structure=True,

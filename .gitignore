@@ -2,6 +2,9 @@
 
 data/clip_data/*
 data/pdf/extracted_images/figures/long_pdf/*
+data/pdf/extracted_images/figures/graph/*
+data/pdf/extracted_images/pages/long_pdf/*
+data/pdf/extracted_images/pages/graph/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
